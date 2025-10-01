@@ -4,7 +4,7 @@ Flattens a 2D bezier curve into a sequence of line segments adaptively, meaning 
 
 It is a cleaned up version of [Matt DesLauries](https://github.com/mattdesl) port([quadratic](https://github.com/mattdesl/adaptive-quadratic-curve), [cubic](https://github.com/mattdesl/adaptive-bezier-curve)) of **Anti-Grain-Geometry**'s bezier subdivision algorithm, it is updated to use the more modern class and module features of javascript. You can find the original algorithm and implementation [here](https://agg.sourceforge.net/antigrain.com/research/adaptive_bezier/).
 
-[Red dots are the computed points and the green/cyan segments are drawn with straight line segments.](./curve.png)
+![Red dots are the computed points and the green/cyan segments are drawn with straight line segments.](./pictures/curve.png)
 
 ## Installation
 
@@ -59,7 +59,7 @@ const quadPoints = qb.flatten(quadCurve.P0, quadCurve.P1, quadCurve.P2, 3);
 
 Here is a comparison image when using a the scale factor
 
-[Scale comparison](scaledemo.png)
+![Scale comparison](./pictures/scaledemo.png)
 
 You can also provide and array to the flatten method
 and it will append the resultant points to that array
