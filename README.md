@@ -2,7 +2,7 @@
 
 Flattens a 2D bezier curve into a sequence of line segments adaptively, meaning it will use less points for the segments that are not curved very much and more points for the highly curved parts. It achivies this by recursively subdividing the curve until it is indistinguishable from a line segment.
 
-It is a cleaned up version of [Matt DesLauries](https://github.com/mattdesl) port([quadratic](https://github.com/mattdesl/adaptive-quadratic-curve), [cubic](https://github.com/mattdesl/adaptive-bezier-curve)) of **Anti-Grain-Geometry**'s bezier subdivision algorithm, it is updated to use the more modern class and module features of javascript. You can find the original algorithm and implementation [here](https://agg.sourceforge.net/antigrain.com/research/adaptive_bezier/).
+It is a cleaned up version of [Matt DesLauries](https://github.com/mattdesl) port ([quadratic](https://github.com/mattdesl/adaptive-quadratic-curve), [cubic](https://github.com/mattdesl/adaptive-bezier-curve)) of **Anti-Grain-Geometry**'s bezier subdivision algorithm, it is updated to use the more modern class and module features of javascript. You can find the original algorithm and implementation [here](https://agg.sourceforge.net/antigrain.com/research/adaptive_bezier/).
 
 ![Red dots are the computed points and the green/cyan segments are drawn with straight line segments.](./pictures/curve.png)
 
@@ -10,7 +10,7 @@ It is a cleaned up version of [Matt DesLauries](https://github.com/mattdesl) por
 
 This library can be used on both **node** and **browser**.
 
-For **browsers** just put the **index.js** file in a suitable place then import it in your script normally:
+For **browsers** just put the [index.js](./index.js) file in a suitable place then import it in your script normally:
 
 ```js
 import { AdaptiveQuadraticBezierBuilder, AdaptiveCubicBezierBuilder } from "./path-to-index.js"
@@ -43,8 +43,7 @@ const quadCurve = {
 
 const qb = new QBuilder();
 
-//the method flatten returns a flat array
-// of x and y coordinates
+//the method flatten returns a flat array of x and y coordinates
 const quadPoints = qb.flatten(quadCurve.P0, quadCurve.P1, quadCurve.P2);
 
 console.log(quadPoints);
@@ -57,7 +56,7 @@ You can also provide a **scale** argument to the **flatten** method, it will app
 const quadPoints = qb.flatten(quadCurve.P0, quadCurve.P1, quadCurve.P2, 3);
 ```
 
-Here is a comparison image when using a the scale factor
+Here is a comparison image when using a the scale factor:
 
 ![Scale comparison](./pictures/scaledemo.png)
 
@@ -65,8 +64,7 @@ You can also provide and array to the flatten method
 and it will append the resultant points to that array
 
 ```js
-//returns the same arr appended to its end the
-//computed points
+//returns the same arr appended to its end the computed points
 const quadPoints = qb.flatten(quadCurve.P0, quadCurve.P1, quadCurve.P2, 3, arr);
 ```
 
@@ -89,7 +87,7 @@ const cubicPoints = cb.flatten(
   cubicCurve.P1,
   cubicCurve.P2,
   cubicCurve.P3,
-  3, //scale
+  3,  //scale
   arr //your array, if not provided will create and return a new one 
 );
 
@@ -100,9 +98,9 @@ console.log(cubicPoints)
 ## Usage
 
 All the class constructor parameters and method parameters
-are annotated with JSDoc. you can find the usage there.
+are annotated with **JSDoc**. you can find the usage there.
 
-**Note**: the constrcutor and methods of these classes doesn't have input validation, you have to provide the correct parameters or only god knows what will happen *(probably will just throw an error)*.
+**Note**: the constrcutor and methods of these classes don't have input validation, you have to provide the correct parameters or only god knows what will happen *(probably will just throw an error)*.
 
 ## TODO
 
