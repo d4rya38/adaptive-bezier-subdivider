@@ -1,0 +1,23 @@
+{
+  "name": "adaptive-bezier-subdivider",
+  "version": "0.1.0",
+  "description": "adaptive subdivider for 2D quadratic and cubic bezier curves",
+  "keywords": [
+    "bezier",
+    "quadratic",
+    "cubic",
+    "approximation",
+    "line",
+    "path",
+    "2D"
+  ],
+  "license": "SEE LICENSE IN LICENSE.md",
+  "author": "darya <daryakoyee0@gmail.com>",
+  "type": "module",
+  "main": "index.js",
+  "repository": "github:d4rya38/adaptive-bezier-subdivider",
+  "bugs": {
+    "url": "https://github.com/d4rya38/adaptive-bezier-subdivider/issues",
+    "email": "daryakoyee0@gmail.com"
+  }
+}
